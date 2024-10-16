@@ -12,6 +12,7 @@
             height: 100vh;
             font-family: Arial, sans-serif;
             position: relative;
+            flex-direction: column; /* Stack elements vertically */
         }
         #countdown {
             font-size: 72px;
@@ -50,6 +51,32 @@
             padding-top: 40vh;
             z-index: 999;
         }
+        /* Splitter line */
+        .splitter {
+            width: 100%;
+            height: 2px;
+            background-color: #ccc; /* Line color */
+            margin: 20px 0; /* Spacing around the line */
+        }
+        /* Social media icons */
+        .social-icons {
+            display: flex;
+            justify-content: center; /* Center the icons */
+        }
+        .icon {
+            width: 50px; /* Icon width */
+            height: 50px; /* Icon height */
+            margin: 0 10px; /* Spacing between icons */
+            background-color: #f0f0f0; /* Placeholder background color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px; /* Rounded corners */
+        }
+        .icon img {
+            width: 80%; /* Adjust image size */
+            height: auto; /* Keep aspect ratio */
+        }
     </style>
 </head>
 <body>
@@ -61,12 +88,19 @@
         <button id="startButton">Start Timer</button>
     </div>
 
-    <!-- Full-screen notification -->
-    <div id="notification">
-        Rest your eyes for 20 seconds!
+    <!-- Splitter line -->
+    <div class="splitter"></div>
+
+    <!-- Social media icons -->
+    <div class="social-icons">
+        <div class="icon"><img src="facebook.png" alt="Whatsapp"></div>
+        <div class="icon"><img src="twitter.png" alt="facebook"></div>
+        <div class="icon"><img src="instagram.png" alt="youtube"></div>
+        <div class="icon"><img src="linkedin.png" alt="Tiktok"></div>
+        <div class="icon"><img src="youtube.png" alt="instagram"></div>
+        <div class="icon"><img src="pinterest.png" alt="twitter"></div>
     </div>
 
-    
     <script>
         var countDownDate;
         var timer;
