@@ -11,10 +11,11 @@
             align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
+            position: relative;
         }
         #countdown {
-            font-size: 72px; /* Increased size from 48px to 72px */
-            font-weight: bold; /* Makes the font bold */
+            font-size: 72px;
+            font-weight: bold;
         }
         #stopButton {
             background-color: red;
@@ -25,6 +26,30 @@
             cursor: pointer;
             margin-top: 20px;
         }
+        #startButton {
+            background-color: green;
+            color: white;
+            font-size: 24px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        /* Full-screen notification */
+        #notification {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            text-align: center;
+            font-size: 48px;
+            padding-top: 40vh;
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -32,45 +57,72 @@
         <div id="label1">يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة</div>
         <div id="label2">Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes</div>
         <div id="countdown">20:00</div>
-        <button id="stopButton">Stop Timer</button> <!-- Place button here -->
-        <button id="startButton" style="background-color: green; color: white; font-size: 24px; padding: 10px 20px; border: none; cursor: pointer; margin-top: 20px;">Start Timer</button>
+        <button id="stopButton">Stop Timer</button>
+        <button id="startButton">Start Timer</button>
     </div>
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date().getTime() + 20 * 60 * 1000; // 20 minutes from now
 
-        // Update the count down every 1 second
-        var x = setInterval(function() {
-            // Get today's date and time
+    <!-- Full-screen notification -->
+    <div id="notification">
+        Rest your eyes for 20 seconds!
+        <audio id="alarmSound" src="Alarm.mp3"></audio>
+    </div>
+
+    <script>
+        var countDownDate;
+        var timer;
+
+        // Function to start the timer
+        function startTimer() {
+            countDownDate = new Date().getTime() + 20 * 60 * 1000; // 20 minutes
+            timer = setInterval(updateCountdown, 1000); // Update every second
+        }
+
+        // Function to update the countdown
+        function updateCountdown() {
             var now = new Date().getTime();
-            
-            // Find the distance between now and the count down date
             var distance = countDownDate - now;
 
-            // Time calculations for minutes and seconds
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Display the result in the element with id="countdown"
             document.getElementById("countdown").innerHTML = minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
 
-            // If the count down is finished, write some text
             if (distance < 0) {
-                clearInterval(x);
+                clearInterval(timer);
                 document.getElementById("countdown").innerHTML = "TIME'S UP!";
+                showNotification();
             }
-        }, 1000);
+        }
 
         // Function to stop the countdown
         document.getElementById("stopButton").onclick = function() {
-            clearInterval(x);
+            clearInterval(timer);
             document.getElementById("countdown").innerHTML = "STOPPED";
         };
 
+        // Function to restart the countdown
         document.getElementById("startButton").onclick = function() {
-    location.reload();
-};
+            clearInterval(timer);
+            location.reload(); // Reload the page to reset everything
+        };
 
+        // Function to show the notification and play the sound
+        function showNotification() {
+            var notification = document.getElementById("notification");
+            var alarmSound = document.getElementById("alarmSound");
+
+            notification.style.display = "block"; // Show the notification
+            alarmSound.play(); // Play the alarm sound
+
+            // Hide the notification and restart the timer after 20 seconds
+            setTimeout(function() {
+                notification.style.display = "none";
+                startTimer(); // Restart the 20-minute countdown
+            }, 20000); // 20 seconds duration
+        }
+
+        // Start the timer when the page loads
+        startTimer();
     </script>
 </body>
 </html>
