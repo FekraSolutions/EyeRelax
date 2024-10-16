@@ -107,7 +107,7 @@
     <div id="notification">
         Rest your eyes for 20 seconds!
     </div>
-    
+    <audio id="alarmSound" src="Alarm.mp3"></audio>
     <script>
         var countDownDate;
         var timer;
@@ -148,16 +148,19 @@
         };
 
         // Function to show the notification 
-        function showNotification() {
-            var notification = document.getElementById("notification");
-            notification.style.display = "block"; // Show the notification
+    function showNotification() {
+    var notification = document.getElementById("notification");
+    var sound = document.getElementById("alarmSound");
+    
+    notification.style.display = "block"; // Show the notification
+    sound.play(); // Play the sound
 
-            // Hide the notification and restart the timer after 20 seconds
-            setTimeout(function() {
-                notification.style.display = "none"; // Hide after 20 seconds
-                startTimer(); // Restart the 20-minute countdown
-            }, 20000); // 20 seconds duration
-        }
+    // Hide the notification and restart the timer after 20 seconds
+    setTimeout(function() {
+        notification.style.display = "none";
+        startTimer(); // Restart the 20-minute countdown
+    }, 20000); // 20 seconds duration
+}
 
         // Start the timer when the page loads
         startTimer();
