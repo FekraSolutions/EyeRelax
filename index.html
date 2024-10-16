@@ -64,7 +64,7 @@
     <!-- Full-screen notification -->
     <div id="notification">
         Rest your eyes for 20 seconds!
-        <audio id="alarmSound" src="Alarm.mp3"></audio>
+        <audio id="alarmSound" src="Alarm.mp3"></audio> <!-- Ensure the audio file is in the same folder -->
     </div>
 
     <script>
@@ -109,6 +109,10 @@
         // Function to show the notification and play the sound
         function showNotification() {
             var notification = document.getElementById("notification");
+            var alarmSound = document.getElementById("alarmSound");
+
+            notification.style.display = "block"; // Show the notification
+            alarmSound.play(); // Play the alarm sound
 
             // Hide the notification and restart the timer after 20 seconds
             setTimeout(function() {
