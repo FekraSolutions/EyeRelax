@@ -12,6 +12,12 @@
             height: 100vh;
             font-family: Arial, sans-serif;
         }
+        #userInput {
+            font-size: 24px; /* Increase font size for better visibility */
+            height: 50px;    /* Increase height of the input box */
+            width: 100%;     /* Make the input box take full width */
+            margin-bottom: 20px; /* Add some space below the input box */
+        }
         #countdown {
             font-size: 72px; /* Increased size from 48px to 72px */
             font-weight: bold; /* Makes the font bold */
@@ -19,8 +25,10 @@
     </style>
 </head>
 <body>
-    <input type="number" id="userInput" placeholder="Enter minutes" min="1" />
-    <div id="countdown">20:00</div>
+    <div style="text-align: center;">
+        <input type="number" id="userInput" placeholder="Enter minutes" min="1" />
+        <div id="countdown">20:00</div>
+    </div>
     <script>
         // Set the date we're counting down to
         var countDownDate = new Date().getTime() + 20 * 60 * 1000; // 20 minutes from now
