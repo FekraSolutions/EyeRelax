@@ -13,15 +13,17 @@
             font-family: Arial, sans-serif;
         }
         #countdown {
-            font-size: 48px;
+            font-size: 72px; /* Increased size from 48px to 72px */
+            font-weight: bold; /* Makes the font bold */
         }
     </style>
 </head>
 <body>
+    <input type="number" id="userInput" placeholder="Enter minutes" min="1" />
     <div id="countdown">20:00</div>
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date().getTime() + 20 * 60 * 1000; // 10 minutes from now
+        var countDownDate = new Date().getTime() + 20 * 60 * 1000; // 20 minutes from now
 
         // Update the count down every 1 second
         var x = setInterval(function() {
