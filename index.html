@@ -16,21 +16,11 @@
             font-size: 72px; /* Increased size from 48px to 72px */
             font-weight: bold; /* Makes the font bold */
         }
-        #stopButton {
-            background-color: red;
-            color: white;
-            font-size: 24px;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
     <div style="text-align: center;">
         <div id="countdown">20:00</div>
-        <button id="stopButton">Stop Timer</button> <!-- Place button here -->
     </div>
     <script>
         // Set the date we're counting down to
@@ -57,12 +47,6 @@
                 document.getElementById("countdown").innerHTML = "TIME'S UP!";
             }
         }, 1000);
-
-        // Function to stop the countdown
-        document.getElementById("stopButton").onclick = function() {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = "STOPPED";
-        };
     </script>
 </body>
 </html>
