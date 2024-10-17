@@ -52,6 +52,33 @@
             padding-top: 40vh;
             z-index: 999;
         }
+  /* Modal for donate message */
+        #donateMessage {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the box */
+            background-color: lightgrey;
+            border: 1px solid darkgrey;
+            padding: 20px;
+            z-index: 1000; /* On top of everything */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
+            max-width: 90%; /* Responsive */
+            width: auto; /* Auto-adjust width */
+        }
+        #donateMessage p {
+            color: black; /* Text color */
+            margin: 0; /* Remove default margin */
+        }
+        #closeButton {
+            background-color: transparent; /* Transparent button */
+            border: none; /* No border */
+            color: blue; /* Button color */
+            cursor: pointer; /* Pointer on hover */
+            font-size: 16px; /* Font size */
+            margin-top: 10px; /* Spacing */
+        }
         /* Splitter line */
         .splitter {
             width: 100%;
@@ -163,6 +190,11 @@
         Rest your eyes for 20 seconds!
     </div>
     <audio id="alarmSound" src="Alarm.mp3"></audio>
+    <!-- Message Box for Donations -->
+    <div id="donateMessage">
+        <p>Hello World</p>
+        <button id="closeButton">Close</button>
+    </div>
     <script>
         var countDownDate;
         var timer;
@@ -254,6 +286,16 @@ document.getElementById("moreApps").addEventListener("click", function() {
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
 
+        // Show the donate message when the donate label is clicked
+        document.getElementById("donateLabel").onclick = function() {
+            document.getElementById("donateMessage").style.display = "block"; // Show the message box
+        };
+
+        // Close the donate message when the close button is clicked
+        document.getElementById("closeButton").onclick = function() {
+            document.getElementById("donateMessage").style.display = "none"; // Hide the message box
+        };
+        
     </script>
 </body>
 </html>
