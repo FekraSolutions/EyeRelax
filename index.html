@@ -178,16 +178,19 @@
         // Start the timer when the page loads
         startTimer();
             // Function to update label based on selected language
-    function updateAppLanguage() {
-        var selectedLanguage = document.getElementById("languageSelect").value;
-        var label = document.getElementById("label1");
+function updateAppLanguage() {
+    var selectedLanguage = document.getElementById("languageSelect").value;
+    var label = document.getElementById("label1");
+    var startButton = document.getElementById("startButton");
 
-        if (selectedLanguage === "ar") {
-            label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
-        } else if (selectedLanguage === "en") {
-            label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
-        }
+    if (selectedLanguage === "ar") {
+        label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
+        startButton.innerHTML = "بدء التوقيت"; // Arabic for "Start Timer"
+    } else if (selectedLanguage === "en") {
+        label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
+        startButton.innerHTML = "Start Timer"; // English text
     }
+}
 
     // Add event listener to language select dropdown
     document.getElementById("languageSelect").addEventListener("change", updateAppLanguage);
