@@ -121,6 +121,7 @@
     <div>Loading2</div>
     <div>Loading3</div>
 </div>
+<div id="donateLabel" style="font-size: 16px; margin-top: 5px; color: black;">ساهم في التطوير</div>
     <div style="position: absolute; top: 10px; left: 10px;">
     <img src="Language.png" alt="Language" style="height: 40px;">
     <select id="languageSelect" style="margin-left: 10px;">
@@ -223,13 +224,11 @@ function updateAppLanguage() {
         startButton.innerHTML = "تشغيل"; // Arabic for "Start Timer"
         stopButton.innerHTML = "إيقاف"; // Arabic for "Stop Timer"
         moreAppsLabel.innerHTML = "تطبيقات مجانية أخرى"; // Arabic for "More Free Apps"
-        donateLabel.innerHTML = "ساهم في التطوير"; // Arabic for "Donate"
     } else if (selectedLanguage === "en") {
         label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
         startButton.innerHTML = "Start Timer"; // English text
         stopButton.innerHTML = "Stop Timer"; // English text
         moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
-        donateLabel.innerHTML = "Donate"; // English for "Donate"
     }
 }
 
