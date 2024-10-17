@@ -263,8 +263,9 @@ function updateAppLanguage() {
     var label = document.getElementById("label1");
     var startButton = document.getElementById("startButton");
     var stopButton = document.getElementById("stopButton");
-    var moreAppsLabel = document.getElementById("moreApps"); // Add this line
-    var donateLabel = document.getElementById("donateLabel"); // Add this line
+    var moreAppsLabel = document.getElementById("moreApps"); 
+    var donateLabel = document.getElementById("donateLabel"); 
+    var donateMessage = document.getElementById("donateMessage");
     
     if (selectedLanguage === "ar") {
         label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
@@ -272,12 +273,14 @@ function updateAppLanguage() {
         stopButton.innerHTML = "إيقاف"; // Arabic for "Stop Timer"
         moreAppsLabel.innerHTML = "تطبيقات مجانية أخرى"; // Arabic for "More Free Apps"
         donateLabel.innerHTML = "ساهم في التطوير"; // Arabic for "Donate"
+        donateMessage.innerHTML = 'أعجبك التطبيق؟ نحن نخصص أي مبالغ تدفعها في تطوير النسخة القادمة! شكرا لكم. للمساهمة من داخل مصر، يمكنك إرسال فودافون كاش على رقم 01060469453 ويمكنك المساهمة من كل بلدان العالم من خلال شراء أي من منتجاتنا في <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">آب ورك</a>, أفضل منصة رقمية في العالم.'; // Updated Arabic donation message
     } else if (selectedLanguage === "en") {
         label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
         startButton.innerHTML = "Start Timer"; // English text
         stopButton.innerHTML = "Stop Timer"; // English text
         moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
         donateLabel.innerHTML = "Donate"; // English for "Donate"
+        donateMessage.innerHTML = 'Like the app? We allocate any amounts you pay for the development of the next version! Thank you. You can contribute from anywhere in the world by purchasing any of our products on <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">Upwork</a>, the best digital platform in the world.'; // English donation message
     }
 }
 
