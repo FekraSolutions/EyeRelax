@@ -131,6 +131,9 @@
 </div>
 <div id="donateLabel" style="font-size: 16px; color: red;">ساهم في التطوير</div>
     <div style="position: absolute; top: 10px; left: 10px;">
+<div id="thankYouMessage" style="display: none; text-align: center; font-size: 18px; margin-top: 20px;">
+    Thank you for your support! Your contribution helps us improve and provide better services.
+</div>
     <img src="Language.png" alt="Language" style="height: 40px;">
     <select id="languageSelect" style="margin-left: 10px;">
         <option value="ar">العربية</option>
@@ -253,6 +256,16 @@ document.getElementById("moreApps").addEventListener("click", function() {
     var dropdown = document.getElementById("dropdown");
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
+
+// Function to show the thank you message
+document.getElementById("donateLabel").onclick = function() {
+    var message = document.getElementById("thankYouMessage");
+    message.style.display = "block"; // Show the thank you message
+    // Optionally, hide the message after a few seconds
+    setTimeout(function() {
+        message.style.display = "none"; // Hide after 5 seconds
+    }, 5000);
+};
 
     </script>
 </body>
