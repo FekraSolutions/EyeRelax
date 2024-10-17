@@ -163,14 +163,6 @@
         Rest your eyes for 20 seconds!
     </div>
     <audio id="alarmSound" src="Alarm.mp3"></audio>
-<div id="donationMessage" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-    background-color: lightgrey; border: 1px solid darkgrey; padding: 20px; text-align: center; z-index: 1000; 
-    border-radius: 8px;">
-    <span id="donationText"></span>
-    <br>
-    <button id="closeButton" style="margin-top: 10px; padding: 5px 10px;">Close</button>
-</div>
-
     <script>
         var countDownDate;
         var timer;
@@ -228,7 +220,6 @@
         // Start the timer when the page loads
         startTimer();
             // Function to update label based on selected language
-// Function to update label based on selected language
 function updateAppLanguage() {
     var selectedLanguage = document.getElementById("languageSelect").value;
     var label = document.getElementById("label1");
@@ -250,9 +241,6 @@ function updateAppLanguage() {
         moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
         donateLabel.innerHTML = "Donate"; // English for "Donate"
     }
-
-    // Call the function to show the donation message in the selected language
-    showDonationMessage(); 
 }
 
     // Add event listener to language select dropdown
@@ -265,24 +253,7 @@ document.getElementById("moreApps").addEventListener("click", function() {
     var dropdown = document.getElementById("dropdown");
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
-        
-// Function to show the donation message
-function showDonationMessage() {
-    var selectedLanguage = document.getElementById("languageSelect").value; // Get the selected language
-    var messageBox = document.getElementById("donationMessageBox"); // Your message box/container
 
-    // Set the message based on the selected language
-    var message;
-    if (selectedLanguage === "ar") {
-        message = "أعجبك التطبيق؟ نحن نخصص أي مبالغ تدفعها في تطوير النسخة القادمة! شكرا لكم. للمساهمة من داخل مصر، يمكنك <strong>إرسال فودافون كاش على رقم 01060469453</strong> ويمكنك المساهمة من كل بلدان العالم من خلال شراء أي من منتجاتنا في <a href='https://www.upwork.com/freelancers/mazena107' target='_blank'>آب ورك</a>، أفضل منصة رقمية في العالم.";
-    } else if (selectedLanguage === "en") {
-        message = "Liked the app? We will allocate any money you pay to develop the next version! Thank you. To contribute from within Egypt, you can <strong>send Vodafone Cash to 01060469453</strong>. You can contribute from all countries of the world by purchasing any of our products on <a href='https://www.upwork.com/freelancers/mazena107' target='_blank'>Upwork</a>, the best digital platform in the world.";
-    }
-
-    // Set the message in the message box and make it visible
-    messageBox.innerHTML = message; // Set the message
-    messageBox.style.display = 'block'; // Show the message box
-}
     </script>
 </body>
 </html>
