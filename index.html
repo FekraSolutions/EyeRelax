@@ -182,13 +182,16 @@ function updateAppLanguage() {
     var selectedLanguage = document.getElementById("languageSelect").value;
     var label = document.getElementById("label1");
     var startButton = document.getElementById("startButton");
+    var stoptButton = document.getElementById("stopButton");
 
     if (selectedLanguage === "ar") {
         label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
-        startButton.innerHTML = "بدء التوقيت"; // Arabic for "Start Timer"
+        startButton.innerHTML = "تشغيل"; // Arabic for "Start Timer"
+        stopButton.innerHTML = "إيقاف"; // Arabic for "Start Timer"
     } else if (selectedLanguage === "en") {
         label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
         startButton.innerHTML = "Start Timer"; // English text
+        stoptButton.innerHTML = "Stop Timer"; // English text
     }
 }
 
