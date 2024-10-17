@@ -52,33 +52,6 @@
             padding-top: 40vh;
             z-index: 999;
         }
-  /* Modal for donate message */
-   #donateMessage {
-            display: none; /* Hidden by default */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); /* Center the box */
-            background-color: lightgrey;
-            border: 1px solid darkgrey;
-            padding: 20px;
-            z-index: 1000; /* On top of everything */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow for better visibility */
-            max-width: 90%; /* Responsive */
-            width: auto; /* Auto-adjust width */
-        }
-        #donateMessage p {
-            color: black; /* Text color */
-            margin: 0; /* Remove default margin */
-        }
-        #closeButton {
-            background-color: transparent; /* Transparent button */
-            border: none; /* No border */
-            color: blue; /* Button color */
-            cursor: pointer; /* Pointer on hover */
-            font-size: 16px; /* Font size */
-            margin-top: 10px; /* Spacing */
-        }
         /* Splitter line */
         .splitter {
             width: 100%;
@@ -190,17 +163,6 @@
         Rest your eyes for 20 seconds!
     </div>
     <audio id="alarmSound" src="Alarm.mp3"></audio>
-    <!-- Message Box for Donations -->
-    <!-- Message Box for Donations -->
-    <div id="donateMessage">
-        <p>
-            Liked the app? We will allocate any money you pay to develop the next version! Thank you. 
-            To contribute from within Egypt, you can send Vodafone Cash to 01060469453. 
-            You can contribute from all countries of the world by purchasing any of our products on 
-            <a href="https://www.upwork.com/freelancers/mazena107" target="_blank" style="color: blue; text-decoration: underline;">Upwork</a>, the best digital platform in the world.
-        </p>
-        <button id="closeButton">Close</button>
-    </div>
     <script>
         var countDownDate;
         var timer;
@@ -263,9 +225,8 @@ function updateAppLanguage() {
     var label = document.getElementById("label1");
     var startButton = document.getElementById("startButton");
     var stopButton = document.getElementById("stopButton");
-    var moreAppsLabel = document.getElementById("moreApps"); 
-    var donateLabel = document.getElementById("donateLabel"); 
-    var donateMessage = document.getElementById("donateMessage");
+    var moreAppsLabel = document.getElementById("moreApps"); // Add this line
+    var donateLabel = document.getElementById("donateLabel"); // Add this line
     
     if (selectedLanguage === "ar") {
         label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
@@ -273,14 +234,12 @@ function updateAppLanguage() {
         stopButton.innerHTML = "إيقاف"; // Arabic for "Stop Timer"
         moreAppsLabel.innerHTML = "تطبيقات مجانية أخرى"; // Arabic for "More Free Apps"
         donateLabel.innerHTML = "ساهم في التطوير"; // Arabic for "Donate"
-        donateMessage.innerHTML = 'أعجبك التطبيق؟ نحن نخصص أي مبالغ تدفعها في تطوير النسخة القادمة! شكرا لكم. للمساهمة من داخل مصر، يمكنك إرسال فودافون كاش على رقم 01060469453 ويمكنك المساهمة من كل بلدان العالم من خلال شراء أي من منتجاتنا في <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">آب ورك</a>، أفضل منصة رقمية في العالم.'; // Updated Arabic donation message
     } else if (selectedLanguage === "en") {
         label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
         startButton.innerHTML = "Start Timer"; // English text
         stopButton.innerHTML = "Stop Timer"; // English text
         moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
         donateLabel.innerHTML = "Donate"; // English for "Donate"
-        donateMessage.innerHTML = 'Like the app? We allocate any amounts you pay for the development of the next version! Thank you. You can contribute from anywhere in the world by purchasing any of our products on <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">Upwork</a>, the best digital platform in the world.'; // English donation message
     }
 }
 
@@ -295,16 +254,6 @@ document.getElementById("moreApps").addEventListener("click", function() {
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
 
-        // Show the donate message when the donate label is clicked
-        document.getElementById("donateLabel").onclick = function() {
-            document.getElementById("donateMessage").style.display = "block"; // Show the message box
-        };
-
-        // Close the donate message when the close button is clicked
-        document.getElementById("closeButton").onclick = function() {
-            document.getElementById("donateMessage").style.display = "none"; // Hide the message box
-        };
-        
     </script>
 </body>
 </html>
