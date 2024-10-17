@@ -5,82 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EyeRelax-20 Mins Alarm</title>
     <style>
-        /* Add your existing styles here */   
-        .header-labels {
-            display: flex;
-            justify-content: space-around; /* Space items evenly */
-            align-items: center;
-            margin: 20px 0; /* Margin for spacing */
-        }
-
-        .header-label {
-            cursor: pointer; /* Change cursor to hand */
-            padding: 10px 20px; /* Padding for labels */
-            color: white; /* Text color */
-            text-align: center; /* Center align text */
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s; /* Smooth background transition */
-        }
-
-        .red-label {
-            background-color: red; /* Red label */
-        }
-
-        .black-label {
-            background-color: black; /* Black label */
-        }
-
-        /* Dropdown styles */
-        .dropdown {
-            position: relative; /* For positioning the dropdown */
-        }
-
-        .dropdown-content {
-            display: none; /* Hidden by default */
-            position: absolute;
-            background-color: black; /* Dropdown background color */
-            min-width: 160px; /* Minimum width of dropdown */
-            z-index: 1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block; /* Show on hover */
-        }
-
-        .dropdown-item {
-            color: white; /* Dropdown item color */
-            padding: 12px 16px; /* Padding for dropdown items */
-            text-decoration: none; /* Remove underline */
-            display: block; /* Display as block */
-        }
-
-        .dropdown-item:hover {
-            background-color: grey; /* Change background on hover */
-        }
-
-        /* Hamburger menu styles */
-        .hamburger {
-            display: none; /* Hidden by default */
-            flex-direction: column; /* Stack the lines */
-            cursor: pointer; /* Change cursor to hand */
-        }
-
-        .line {
-            height: 4px; /* Thickness of lines */
-            width: 30px; /* Width of lines */
-            background-color: black; /* Color of lines */
-            margin: 3px 0; /* Space between lines */
-        }
-
-        @media (max-width: 768px) { /* Responsive styles */
-            .header-labels {
-                display: none; /* Hide labels on mobile */
-            }
-
-            .hamburger {
-                display: flex; /* Show hamburger menu */
-            }
-        }
         body {
     display: flex;
     justify-content: center;
@@ -164,29 +88,6 @@
     </style>
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="hamburger" onclick="toggleMenu()">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
-
-    <!-- Header Labels -->
-    <div class="header-labels">
-        <div class="header-label red-label">ساهم في التطوير</div>
-        <div class="header-label black-label">اقترح تعديلات</div>
-        <div class="header-label black-label">فيديوهات شرح التطبيق</div>
-        <div class="header-label dropdown">
-            تطبيقات أخرى
-            <div class="dropdown-content">
-                <a class="dropdown-item" href="#">Loading1</a>
-                <a class="dropdown-item" href="#">Loading2</a>
-                <a class="dropdown-item" href="#">Loading3</a>
-            </div>
-        </div>
-        <div class="header-label black-label">دراسات جدوى</div>
-        <div class="header-label black-label">مقالات</div>
-    </div>
     <div style="position: absolute; top: 10px; left: 10px;">
     <img src="Language.png" alt="Language" style="height: 40px;">
     <select id="languageSelect" style="margin-left: 10px;">
@@ -299,17 +200,6 @@ function updateAppLanguage() {
 
     // Call updateLabel on page load to set the initial label value
     updateAppLanguage();
-
-
-        function toggleMenu() {
-            var labels = document.querySelector('.header-labels');
-            if (labels.style.display === "none" || labels.style.display === "") {
-                labels.style.display = "flex"; // Show labels
-            } else {
-                labels.style.display = "none"; // Hide labels
-            }
-        }
-        
     </script>
 </body>
 </html>
