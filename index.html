@@ -215,18 +215,22 @@ function updateAppLanguage() {
     var selectedLanguage = document.getElementById("languageSelect").value;
     var label = document.getElementById("label1");
     var startButton = document.getElementById("startButton");
-    var stoptButton = document.getElementById("stopButton");
+    var stopButton = document.getElementById("stopButton");
+    var moreAppsLabel = document.getElementById("moreApps"); // Add this line
 
     if (selectedLanguage === "ar") {
         label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
         startButton.innerHTML = "تشغيل"; // Arabic for "Start Timer"
-        stopButton.innerHTML = "إيقاف"; // Arabic for "STOP Timer"
+        stopButton.innerHTML = "إيقاف"; // Arabic for "Stop Timer"
+        moreAppsLabel.innerHTML = "تطبيقات مجانية أخرى"; // Arabic for "More Free Apps"
     } else if (selectedLanguage === "en") {
         label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
         startButton.innerHTML = "Start Timer"; // English text
-        stoptButton.innerHTML = "Stop Timer"; // English text
+        stopButton.innerHTML = "Stop Timer"; // English text
+        moreAppsLabel.innerHTML = "More Free Apps"; // English for "More Free Apps"
     }
 }
+
 
     // Add event listener to language select dropdown
     document.getElementById("languageSelect").addEventListener("change", updateAppLanguage);
