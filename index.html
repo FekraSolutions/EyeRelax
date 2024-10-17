@@ -85,9 +85,42 @@
     font-size: 16px;
     padding: 5px;
 }
+#moreApps {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer; /* Hand cursor on hover */
+}
+
+#dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    background-color: grey;
+    border: 1px solid black;
+    z-index: 10;
+}
+
+#dropdown div {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#dropdown div:hover {
+    background-color: #ccc;
+}
     </style>
 </head>
 <body>
+<div id="moreApps">More Free Apps</div>
+<div id="dropdown">
+    <div>Loading1</div>
+    <div>Loading2</div>
+    <div>Loading3</div>
+</div>
     <div style="position: absolute; top: 10px; left: 10px;">
     <img src="Language.png" alt="Language" style="height: 40px;">
     <select id="languageSelect" style="margin-left: 10px;">
@@ -200,6 +233,12 @@ function updateAppLanguage() {
 
     // Call updateLabel on page load to set the initial label value
     updateAppLanguage();
+
+document.getElementById("moreApps").addEventListener("click", function() {
+    var dropdown = document.getElementById("dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+});
+
     </script>
 </body>
 </html>
