@@ -80,9 +80,20 @@
             width: 80%; /* Adjust image size */
             height: auto; /* Keep aspect ratio */
         }
+#languageSelect {
+    font-size: 16px;
+    padding: 5px;
+}
     </style>
 </head>
 <body>
+    <div style="position: absolute; top: 10px; left: 10px;">
+    <img src="Language.png" alt="Language" style="height: 40px;">
+    <select id="languageSelect" style="margin-left: 10px;">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+    </select>
+</div>
     <div style="text-align: center;">
         <div id="label1">يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة</div>
         <div id="label2">Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes</div>
