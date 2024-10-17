@@ -120,18 +120,7 @@
 #dropdown div:hover {
     background-color: #bbb; /* Slightly darker grey on hover */
 }
-/* New section for the lower part */
-#lowerPart {
-    flex-grow: 1; /* Make it take the remaining space */
-    width: 100%;
-    background-color: #f7f7f7; /* Lightest grey color */
-    display: flex;
-    justify-content: center; /* Center the content */
-    align-items: center; /* Center the content vertically */
-    flex-direction: column; /* Stack items vertically */
-    padding: 20px; /* Add some padding */
-}
-</style>
+    </style>
 </head>
 <body>
 <div id="moreApps">More Free Apps</div>
@@ -156,7 +145,6 @@
     </div>
     <!-- Splitter line -->
     <div class="splitter"></div>
-    <div id="lowerPart">
     <!-- Social media icons -->
     <div class="social-icons">
         <div class="icon" onclick="window.open('https://wa.me/201060469453?text=Hi', '_blank');"><img src="whatsapp.png" alt="Whatsapp"></div>
@@ -173,7 +161,6 @@
     <!-- Full Screen Notifier -->
     <div id="notification">
         Rest your eyes for 20 seconds!
-    </div>
     </div>
     <audio id="alarmSound" src="Alarm.mp3"></audio>
     <script>
