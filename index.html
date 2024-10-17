@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EyeRelax-20 Mins Alarm</title>
     <style>
+#dropdown div {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#dropdown div:hover {
+    background-color: #f0f0f0; /* Light grey on hover */
+}
         body {
     display: flex;
     justify-content: center;
@@ -88,6 +96,14 @@
     </style>
 </head>
 <body>
+<div id="moreApps" onclick="toggleDropdown()" style="cursor: pointer; color: red; font-size: 16px; margin-top: 10px;">
+    More Free Apps
+</div>
+<div id="dropdown" style="display: none; position: absolute; top: 40px; right: 10px; background: white; padding: 5px; border-radius: 4px;">
+    <div>Loading1</div>
+    <div>Loading2</div>
+    <div>Loading3</div>
+</div>
     <div style="position: absolute; top: 10px; left: 10px;">
     <img src="Language.png" alt="Language" style="height: 40px;">
     <select id="languageSelect" style="margin-left: 10px;">
@@ -200,6 +216,13 @@ function updateAppLanguage() {
 
     // Call updateLabel on page load to set the initial label value
     updateAppLanguage();
+
+function toggleDropdown() {
+    var dropdown = document.getElementById("dropdown");
+    dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+}
+
+        
     </script>
 </body>
 </html>
