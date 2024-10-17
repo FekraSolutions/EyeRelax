@@ -6,15 +6,15 @@
     <title>EyeRelax-20 Mins Alarm</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            position: relative;
-            flex-direction: column;
-            overflow: hidden; /* Prevent scrolling */
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    position: relative;
+    flex-direction: column;
+    overflow: hidden; /* Prevent scrolling */
+}
         #countdown {
             font-size: 72px;
             font-weight: bold;
@@ -61,40 +61,40 @@
         }
         /* Social media icons */
         .social-icons {
-            display: flex;
-            justify-content: center; /* Center the icons */
-            flex-wrap: wrap; /* Allow icons to wrap onto multiple lines */
-            max-width: 100%; /* Ensure it doesn't exceed the container width */
-        }
+    display: flex;
+    justify-content: center; /* Center the icons */
+    flex-wrap: wrap; /* Allow icons to wrap onto multiple lines */
+    max-width: 100%; /* Ensure it doesn't exceed the container width */
+}
         .icon {
-            width: 50px; /* Icon width */
-            height: 50px; /* Icon height */
-            margin: 0 10px; /* Spacing between icons */
-            background-color: #f0f0f0; /* Placeholder background color */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px; /* Rounded corners */
-            cursor: pointer; /* Add this line */
-        }
+    width: 50px; /* Icon width */
+    height: 50px; /* Icon height */
+    margin: 0 10px; /* Spacing between icons */
+    background-color: #f0f0f0; /* Placeholder background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Add this line */
+}
         .icon img {
             width: 80%; /* Adjust image size */
             height: auto; /* Keep aspect ratio */
         }
-        #languageSelect {
-            font-size: 16px;
-            padding: 5px;
-        }
+#languageSelect {
+    font-size: 16px;
+    padding: 5px;
+}
     </style>
 </head>
 <body>
     <div style="position: absolute; top: 10px; left: 10px;">
-        <img src="Language.png" alt="Language" style="height: 40px;">
-        <select id="languageSelect" style="margin-left: 10px;" onchange="updateAppLanguage()">
-            <option value="ar">العربية</option>
-            <option value="en">English</option>
-        </select>
-    </div>
+    <img src="Language.png" alt="Language" style="height: 40px;">
+    <select id="languageSelect" style="margin-left: 10px;">
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+    </select>
+</div>
     <div style="text-align: center;">
         <div id="label1">يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة</div>
         <div id="countdown">20:00</div>
@@ -113,9 +113,9 @@
         <div class="icon" onclick="window.open('https://x.com/Fekrasolutions', '_blank');"><img src="twitter.png" alt="Twitter"></div>
     </div>
     <!-- Logo -->
-    <div style="text-align: center; margin-top: 20px;">
-        <img src="Tlogo.png" alt="Logo" style="max-width: 35%; height: auto;">
-    </div>
+<div style="text-align: center; margin-top: 20px;">
+    <img src="Tlogo.png" alt="Logo" style="max-width: 35%; height: auto;">
+</div>
     <!-- Full Screen Notifier -->
     <div id="notification">
         Rest your eyes for 20 seconds!
@@ -152,57 +152,48 @@
         document.getElementById("stopButton").onclick = function() {
             clearInterval(timer);
             document.getElementById("countdown").innerHTML = "STOPPED";
-            updateAppLanguage(); // Update button text based on selected language
         };
 
         // Function to restart the countdown
         document.getElementById("startButton").onclick = function() {
             clearInterval(timer);
-            startTimer(); // Start the timer without reloading the page
-            updateAppLanguage(); // Ensure buttons update their language
+            location.reload(); // Reload the page to reset everything
         };
 
         // Function to show the notification 
-        function showNotification() {
-            var notification = document.getElementById("notification");
-            var sound = document.getElementById("alarmSound");
-            
-            notification.style.display = "block"; // Show the notification
-            sound.play(); // Play the sound
+    function showNotification() {
+    var notification = document.getElementById("notification");
+    var sound = document.getElementById("alarmSound");
+    
+    notification.style.display = "block"; // Show the notification
+    sound.play(); // Play the sound
 
-            // Hide the notification and restart the timer after 20 seconds
-            setTimeout(function() {
-                notification.style.display = "none";
-                startTimer(); // Restart the 20-minute countdown
-            }, 20000); // 20 seconds duration
-        }
+    // Hide the notification and restart the timer after 20 seconds
+    setTimeout(function() {
+        notification.style.display = "none";
+        startTimer(); // Restart the 20-minute countdown
+    }, 20000); // 20 seconds duration
+}
 
         // Start the timer when the page loads
         startTimer();
+            // Function to update label based on selected language
+    function updateAppLanguage() {
+        var selectedLanguage = document.getElementById("languageSelect").value;
+        var label = document.getElementById("label1");
 
-        // Function to update label based on selected language
-        var selectedLanguage = "en"; // Default language
-
-        function updateAppLanguage() {
-            selectedLanguage = document.getElementById("languageSelect").value;
-            var label = document.getElementById("label1");
-            var startButton = document.getElementById("startButton");
-            var stopButton = document.getElementById("stopButton");
-            var notification = document.getElementById("notification");
-
-            if (selectedLanguage === "ar") {
-                label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
-                startButton.innerHTML = "تشغيل";
-                stopButton.innerHTML = "إيقاف";
-                notification.innerHTML = "من فضلك انظر بعيدًا لمدة 20 ثانية!";
-            } else {
-                label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
-                startButton.innerHTML = "Start Timer";
-                stopButton.innerHTML = "Stop Timer";
-                notification.innerHTML = "Rest your eyes for 20 seconds!";
-            }
+        if (selectedLanguage === "ar") {
+            label.innerHTML = "يجب راحة عينيك من الشاشة لمدة 20 ثانية، احتفظ بالصفحة مفتوحة وسيصلك تنبيه كل 20 دقيقة";
+        } else if (selectedLanguage === "en") {
+            label.innerHTML = "Rest your eyes from the screen for 20 seconds, keep the page open to receive an alert every 20 minutes";
         }
+    }
 
+    // Add event listener to language select dropdown
+    document.getElementById("languageSelect").addEventListener("change", updateAppLanguage);
+
+    // Call updateLabel on page load to set the initial label value
+    updateAppLanguage();
     </script>
 </body>
 </html>
