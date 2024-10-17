@@ -84,6 +84,12 @@
 #languageSelect {
     font-size: 16px;
     padding: 5px;
+    display: inline-flex;
+    align-items: center;
+}
+
+#languageSelect img { /* Assuming the icon is an img */
+    margin-right: 5px;
 }
     </style>
 </head>
@@ -91,8 +97,8 @@
     <div style="position: absolute; top: 10px; left: 10px;">
     <img src="Language.png" alt="Language" style="height: 40px;">
     <select id="languageSelect" style="margin-left: 10px;">
-        <option value="en">English</option>
         <option value="ar">العربية</option>
+        <option value="en">English</option>
     </select>
 </div>
     <div style="text-align: center;">
