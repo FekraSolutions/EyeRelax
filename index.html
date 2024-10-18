@@ -163,6 +163,12 @@
         Rest your eyes for 20 seconds!
     </div>
     <audio id="alarmSound" src="Alarm.mp3"></audio>
+<!-- Donation Message Container -->
+<div id="donationMessage" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; border: 1px solid black; padding: 20px; z-index: 1000; text-align: center;">
+    <div id="donationText" style="color: black;"></div>
+    <button id="closeButton" style="margin-top: 10px;">Close</button>
+</div>
+
     <script>
         var countDownDate;
         var timer;
@@ -253,6 +259,36 @@ document.getElementById("moreApps").addEventListener("click", function() {
     var dropdown = document.getElementById("dropdown");
     dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
 });
+document.getElementById("donateLabel").onclick = function() {
+    var selectedLanguage = document.getElementById("languageSelect").value;
+    var donationText;
+
+    if (selectedLanguage === "ar") {
+        donationText = `
+            أعجبك التطبيق؟ نحن نخصص أي مبالغ تدفعها في تطوير النسخة القادمة! شكرا لكم. 
+            <strong>يمكنك إرسال فودافون كاش على رقم 01060469453</strong> 
+            يمكنك المساهمة من كل بلدان العالم من خلال شراء أي من منتجاتنا في 
+            <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">آب ورك</a>, 
+            أفضل منصة رقمية في العالم.
+        `;
+    } else {
+        donationText = `
+            Liked the app? We will allocate any money you pay to develop the next version! Thank you. 
+            <strong>Send Vodafone Cash to 01060469453</strong>. 
+            You can contribute from all countries of the world by purchasing any of our products on 
+            <a href="https://www.upwork.com/freelancers/mazena107" target="_blank">Upwork</a>, 
+            the best digital platform in the world.
+        `;
+    }
+
+    document.getElementById("donationText").innerHTML = donationText;
+    document.getElementById("donationMessage").style.display = "block"; // Show the donation message
+};
+
+// Close button functionality
+document.getElementById("closeButton").onclick = function() {
+    document.getElementById("donationMessage").style.display = "none"; // Hide the donation message
+};
 
     </script>
 </body>
