@@ -126,7 +126,11 @@
 <body>
 <div id="moreApps">More Free Apps</div>
 <div id="dropdown">
-    <div>Loading1</div>
+    <div id="dropdown">
+    <a id="dropdownLink" href="https://fekrasolutions.github.io/Building-Materials-Stores-Application/" target="_blank" style="text-decoration: none; color: inherit;">
+        Stores Cashier & ERP Systems
+    </a>
+</div>
     <div>Loading2</div>
     <div>Loading3</div>
 </div>
@@ -231,6 +235,14 @@
         startTimer();
             // Function to update label based on selected language
 function updateAppLanguage() {
+        const selectedLanguage = this.value;
+    const dropdownLink = document.getElementById("dropdownLink");
+
+    if (selectedLanguage === "ar") {
+        dropdownLink.textContent = "تطبيق كاشير وحسابات المحلات";
+    } else {
+        dropdownLink.textContent = "Stores Cashier & ERP Systems";
+    }
     var selectedLanguage = document.getElementById("languageSelect").value;
     var label = document.getElementById("label1");
     var startButton = document.getElementById("startButton");
